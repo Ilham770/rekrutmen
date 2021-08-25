@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\LowonganModel;
+use CodeIgniter\HTTP\Request;
 
 class Lowongan extends BaseController
 {
@@ -29,4 +30,44 @@ class Lowongan extends BaseController
 
 		return view('administrator/data_lowongan/viewLowongan', $data);
 	}
+
+	public function create()
+	{
+		//FORM Create HANDLER
+		$data = [
+			'title' => 'Form Tambah Data Lowongan',
+			'validation' => \Config\Services::validation()
+		];
+		return view('administrator/data_lowongan/addLowongan', $data);
+		//end
+	}
+
+	public function save()
+	{
+		//FORM VALIDATION
+		if (!$this->validate([
+			'judul' => 'required',
+			'deskripsi' => 'required',
+			'id_jobdesc' => 'required',
+			'gambar' => 'required',
+		])) {
+			$validation = \Config\Services::validation();
+			return redirect()->to('lowongan/create')->withInput()->with('validation', $validation);
+		}
+		//end
+
+		//FUNGSI SAVE DATA
+		$this->dataLowongan->save([
+			'judul' => $this->request->getVar('judul'),
+			'deskripsi' => $this->request->getVar('deskripsi'),
+			'id_jobdesc' => $this->request->getVar('jobdesc'),
+
+		]);
+
+		session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
+
+		return redirect()->to('/lowongan/view');
+	}
+	//end
+
 }

@@ -3,7 +3,7 @@
 
 <h2 class="mt-2">Data Lowongan</h2>
 <hr>
-<a href="/admin/create" class="btn btn-light mb-2"><span data-feather="plus"></span>Add Data</a>
+<a href="/lowongan/create" class="btn btn-light mb-2"><span data-feather="plus"></span>Add Data</a>
 
 <?php if (session()->getFlashdata('pesan')) : ?>
     <div class="alert alert-success" role="alert">
@@ -30,7 +30,7 @@
                     <td><?= $i++ ?></td>
                     <td><?= $data['judul'] ?></td>
                     <td><?= $data['deskripsi'] ?></td>
-                    <td><?= $data['jobdesk'] ?></td>
+                    <td></td>
                     <td><img class="img img-circle" src="/public/images/admin/<?= $data['gambar'] ?>" alt="gambar" width="80px"></td>
                     <td>
                         <a href="/lowongan/edit/<?= $data['id'] ?>" class="btn btn-warning mb-2">Edit</a> ||
