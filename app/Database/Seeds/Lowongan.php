@@ -12,7 +12,7 @@ class Lowongan extends Seeder
 	{
 		$data = [
 			[
-				'judul' => 'PART TIME JOB',
+				'job_name' => 'Graphic',
 				'jobdesk' => 'Junior Design Grafis',
 				'deskripsi' => 'Menguasai CorelDraw, Photoshop atau Illustrator, mengerjakan semua konten design harian',
 				'tanggal_upload' => Time::now(),

@@ -6,7 +6,7 @@
   <?= csrf_field(); ?>
   <div class="row">
     <div class="form-group col-md-6">
-      <label for="judul">Judul</label>
+      <label for="judul">Title</label>
       <input type="text" class="form-control <?= ($validation->hasError('judul')) ? 'is-invalid' : '' ?>" id="judul" name="judul" placeholder="Masukkan nama">
       <div class="invalid-feedback">
         <?= $validation->getError('judul') ?>
@@ -16,7 +16,7 @@
 
   <div class="row">
     <div class="form-group col-md-6">
-      <label for="deskripsi">Deskripsi</label>
+      <label for="deskripsi">Description</label>
       <textarea name="deskripsi" id="deskripsi" class="form-control <?= ($validation->hasError('deskripsi')) ? 'is-invalid' : '' ?>" placeholder="Masukkan Deskripsi Pekerjaan"></textarea>
       <div class="invalid-feedback">
         <?= $validation->getError('deskripsi') ?>
@@ -26,9 +26,9 @@
 
   <div class="row">
     <div class="form-group col-md-3">
-      <label for="jobdesc">Jenis Pekerjaan</label>
+      <label for="jobdesc">Jobdesc</label>
       <select name="jobdesc" id="jobdesc" class="form-control <?= ($validation->hasError('jobdesc')) ? 'is-invalid' : '' ?>">
-        <option selected>Pilih Pekerjaan</option>
+        <option selected>Select Jobdesc</option>
         <option value=""></option>
       </select>
       <div class="invalid-feedback">
@@ -39,7 +39,7 @@
 
   <div class="row">
     <div class="form-group col-md-3">
-      <label for="gambar">Gambar</label>
+      <label for="gambar">Image</label>
       <input type="file" class="form-control <?= ($validation->hasError('gambar')) ? 'is-invalid' : '' ?>" name="gambar" id="gambar" placeholder="Pilih Gambar">
       <div class="invalid-feedback">
         <?= $validation->getError('gambar') ?>

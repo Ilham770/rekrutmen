@@ -16,10 +16,10 @@
         <thead>
             <tr align="center">
                 <th>No</th>
-                <th>Judul</th>
-                <th>Deskripsi</th>
-                <th>Jobdesk</th>
-                <th>Gambar</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Jobdesc</th>
+                <th>Image</th>
                 <th>Action</th>
             </tr>
         </thead>

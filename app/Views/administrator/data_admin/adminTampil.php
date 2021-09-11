@@ -16,13 +16,13 @@
         <thead>
             <tr align="center">
                 <th>No</th>
-                <th>Nama</th>
+                <th>Name</th>
                 <th>Username</th>
                 <th>Password</th>
-                <th>Jabatan</th>
-                <th>Jenis Kelamin</th>
-                <th>Alamat</th>
-                <th>Telepon</th>
+                <th>Department</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Phone</th>
                 <th>Action</th>
             </tr>
         </thead>
