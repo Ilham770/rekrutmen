@@ -61,15 +61,50 @@
 
                         <li class="nav-item">
                             <a class="nav-link" href="/admin/view">
-                                <span data-feather="users"></span>
+                                <span data-feather="user"></span>
                                 Admin
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/lowongan/view">
+                            <a class="nav-link" href="/lowongan">
                                 <span data-feather="file"></span>
                                 Lowongan
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/lowongan">
+                                <span data-feather="users"></span>
+                                User
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/jobdesc">
+                                <span data-feather="clipboard"></span>
+                                Job Description
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/lowongan/view">
+                                <span data-feather="briefcase"></span>
+                                Campus
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/lowongan/view">
+                                <span data-feather="award"></span>
+                                Major
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/lowongan/view">
+                                <span data-feather="edit-2"></span>
+                                Title
                             </a>
                         </li>
                     </ul>

@@ -16,11 +16,6 @@ class Lowongan extends BaseController
 	}
 	public function index()
 	{
-		//
-	}
-
-	public function view()
-	{
 		$lowongan = $this->dataLowongan->findAll();
 
 		$data = [
@@ -30,6 +25,7 @@ class Lowongan extends BaseController
 
 		return view('administrator/data_lowongan/viewLowongan', $data);
 	}
+
 
 	public function create()
 	{
