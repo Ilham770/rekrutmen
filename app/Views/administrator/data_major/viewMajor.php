@@ -16,19 +16,19 @@
         <thead>
             <tr align="center">
                 <th>No</th>
-                <th>Job Name</th>
+                <th>Major Title</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
             <?php $i = 1; ?>
-            <?php foreach ($campus as $data) : ?>
+            <?php foreach ($major as $data) : ?>
                 <tr>
                     <td><?= $i++ ?></td>
-                    <td><?= $data['campus_name'] ?></td>
+                    <td><?= $data['major_title'] ?></td>
                     <td>
-                        <a href="/campus/edit/<?= $data['id_campus'] ?>" class="btn btn-warning">Edit</a> ||
-                        <a href="/campus/delete/<?= $data['id_campus'] ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');" class="btn btn-danger">Hapus</a>
+                        <a href="/major/edit/<?= $data['id'] ?>" class="btn btn-warning">Edit</a> ||
+                        <a href="/major/delete/<?= $data['id'] ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');" class="btn btn-danger">Hapus</a>
                     </td>
                 </tr>
         </tbody>

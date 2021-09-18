@@ -74,7 +74,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/lowongan">
+                            <a class="nav-link" href="/">
                                 <span data-feather="users"></span>
                                 User
                             </a>
@@ -88,21 +88,21 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/lowongan/view">
+                            <a class="nav-link" href="/campus">
                                 <span data-feather="briefcase"></span>
                                 Campus
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/lowongan/view">
+                            <a class="nav-link" href="/major">
                                 <span data-feather="award"></span>
                                 Major
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/lowongan/view">
+                            <a class="nav-link" href="/title">
                                 <span data-feather="edit-2"></span>
                                 Title
                             </a>

@@ -40,7 +40,7 @@ class Admin extends BaseController
 
 	public function create()
 	{
-		//FORM Create HANDLER
+		//FORM CREATE HANDLER
 		$data = [
 			'title' => 'Form Tambah Data Admin',
 			'validation' => \Config\Services::validation()
@@ -94,7 +94,7 @@ class Admin extends BaseController
 	}
 	//end
 
-	//Form EDIT HANDLER
+	//FORM EDIT HANDLER
 	public function edit($id)
 	{
 		$admin = $this->dataAdmin->find($id);
