@@ -16,7 +16,13 @@
         <thead>
             <tr class="text-center">
                 <th>No</th>
-                <th>Nama Lulusan</th>
+                <th>Nama Lengkap</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Alamat</th>
+                <th>Jenis Kelamin</th>
+                <th>Alamat</th>
+                <th>No.Telp</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -25,9 +31,11 @@
             <?php foreach ($user as $data) : ?>
                 <tr class="text-center">
                     <td><?= $i++ ?></td>
-                    <td><?= $data['title_name'] ?></td>
+                    <td><?= $data['fullname'] ?></td>
+                    <td><?= $data['username'] ?></td>
+                    <td><?= $data['password'] ?></td>
+                    <td><?= $data['address'] ?></td>
                     <td>
-                        <a href="/user/edit/<?= $data['id'] ?>" class="btn btn-warning">Ubah</a> ||
                         <a href="/user/delete/<?= $data['id'] ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');" class="btn btn-danger">Hapus</a>
                     </td>
                 </tr>
