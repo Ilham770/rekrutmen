@@ -21,7 +21,7 @@ class Jobdesc extends BaseController
 
 
 		$data = [
-			'title' => 'Data Job Description',
+			'title' => 'Data Pekerjaan',
 			'jobdesc' =>  $jobdesc,
 		];
 
@@ -32,7 +32,7 @@ class Jobdesc extends BaseController
 	{
 		//FORM Create HANDLER
 		$data = [
-			'title' => 'Form Tambah Data Job Description',
+			'title' => 'Form Tambah Data Pekerjaan',
 			'validation' => \Config\Services::validation()
 		];
 		return view('administrator/data_jobdesc/addJobdesc', $data);
@@ -77,7 +77,7 @@ class Jobdesc extends BaseController
 	{
 		$jobdesc = $this->dataJobdesc->find($id);
 		$data = [
-			'title' => 'Form Edit Data Jobdesc',
+			'title' => 'Form Edit Data Pekerjaan',
 			'validation' => \Config\Services::validation(),
 			'jobdesc' => $jobdesc
 		];

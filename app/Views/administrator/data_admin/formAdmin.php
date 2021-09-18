@@ -34,9 +34,9 @@
 
   <div class="row">
     <div class="form-group col-md-3">
-      <label for="jabatan">Jabatan</label>
+      <label for="jabatan">Departement</label>
       <select name="jabatan" id="jabatan" class="form-control <?= ($validation->hasError('jabatan')) ? 'is-invalid' : '' ?>">
-        <option selected>Pilih Jabatan</option>
+        <option selected>Pilih Departement</option>
         <option value="Owner">Owner</option>
         <option value="Manager">Manajer</option>
         <option value="HRD">HRD</option>
@@ -72,7 +72,7 @@
 
   <div class="row">
     <div class="form-group col-md-3">
-      <label for="telepon">Telepon</label>
+      <label for="telepon">No. Telepon</label>
       <input type="text" class="form-control <?= ($validation->hasError('telepon')) ? 'is-invalid' : '' ?>" name="telepon" id="telepon" placeholder="No. Telp">
       <div class="invalid-feedback">
         <?= $validation->getError('telepon') ?>

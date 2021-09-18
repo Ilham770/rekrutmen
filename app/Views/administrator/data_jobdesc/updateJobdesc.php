@@ -8,7 +8,7 @@
     <input type="hidden" name="id_jobdesc" value="<?= $jobdesc['id_jobdesc'] ?>">
     <div class="row">
         <div class="form-group col-md-6">
-            <label for="job_name">Job Name</label>
+            <label for="job_name">Nama Pekerjaan</label>
             <input type="text" class="form-control <?= ($validation->hasError('job_name')) ? 'is-invalid' : '' ?>" id="job_name" name="job_name" value="<?= $jobdesc['job_name'] ?>">
             <div class="invalid-feedback">
                 <?= $validation->getError('job_name') ?>

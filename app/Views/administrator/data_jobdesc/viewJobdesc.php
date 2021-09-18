@@ -1,9 +1,9 @@
 <?= $this->extend('administrator/Layout/admin_layout') ?>
 <?= $this->section('content') ?>
 
-<h2 class="mt-2">Data Job Description</h2>
+<h2 class="mt-2">Data Pekerjaan</h2>
 <hr>
-<a href="/jobdesc/create" class="btn btn-light mb-2"><span data-feather="plus"></span>Add Data</a>
+<a href="/jobdesc/create" class="btn btn-light mb-2"><span data-feather="plus"></span>Tambah Data</a>
 
 <?php if (session()->getFlashdata('pesan')) : ?>
     <div class="alert alert-success" role="alert">
@@ -14,20 +14,20 @@
 <div class="table-responsive">
     <table class="table table-striped table-sm">
         <thead>
-            <tr align="center">
+            <tr class="text-center">
                 <th>No</th>
-                <th>Job Name</th>
+                <th>Nama Pekerjaan</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
             <?php $i = 1; ?>
             <?php foreach ($jobdesc as $data) : ?>
-                <tr>
+                <tr class="text-center">
                     <td><?= $i++ ?></td>
                     <td><?= $data['job_name'] ?></td>
                     <td>
-                        <a href="/jobdesc/edit/<?= $data['id_jobdesc'] ?>" class="btn btn-warning">Edit</a> ||
+                        <a href="/jobdesc/edit/<?= $data['id_jobdesc'] ?>" class="btn btn-warning"> Ubah</a> ||
                         <a href="/jobdesc/delete/<?= $data['id_jobdesc'] ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');" class="btn btn-danger">Hapus</a>
                     </td>
                 </tr>

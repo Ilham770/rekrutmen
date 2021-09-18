@@ -21,7 +21,7 @@ class Campus extends BaseController
 
 
 		$data = [
-			'title' => 'Data Campus',
+			'title' => 'Data Kampus',
 			'campus' =>  $campus,
 		];
 
@@ -32,7 +32,7 @@ class Campus extends BaseController
 	{
 		//FORM Create HANDLER
 		$data = [
-			'title' => 'Form Tambah Data Campus',
+			'title' => 'Form Tambah Data Kampus',
 			'validation' => \Config\Services::validation()
 		];
 		return view('administrator/data_campus/addCampus', $data);
@@ -74,7 +74,7 @@ class Campus extends BaseController
 	{
 		$campus = $this->dataCampus->find($id);
 		$data = [
-			'title' => 'Form Edit Data Jobdesc',
+			'title' => 'Form Edit Data Kampus',
 			'validation' => \Config\Services::validation(),
 			'campus' => $campus
 		];

@@ -6,7 +6,7 @@
     <?= csrf_field(); ?>
     <div class="row">
         <div class="form-group col-md-6">
-            <label for="campus_name">Campus Name</label>
+            <label for="campus_name">Nama Kampus</label>
             <input type="text" class="form-control <?= ($validation->hasError('campus_name')) ? 'is-invalid' : '' ?>" id="campus_name" name="campus_name" placeholder="Masukkan nama kampus">
             <div class="invalid-feedback">
                 <?= $validation->getError('campus_name') ?>

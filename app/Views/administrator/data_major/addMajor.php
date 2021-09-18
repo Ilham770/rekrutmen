@@ -6,8 +6,8 @@
     <?= csrf_field(); ?>
     <div class="row">
         <div class="form-group col-md-6">
-            <label for="major_title">Major Title</label>
-            <input type="text" class="form-control <?= ($validation->hasError('major_title')) ? 'is-invalid' : '' ?>" id="major_title" name="major_title" placeholder="Masukkan nama kampus">
+            <label for="major_title">Nama Jurusan</label>
+            <input type="text" class="form-control <?= ($validation->hasError('major_title')) ? 'is-invalid' : '' ?>" id="major_title" name="major_title" placeholder="Masukkan nama Program Studi">
             <div class="invalid-feedback">
                 <?= $validation->getError('major_title') ?>
             </div>

@@ -31,7 +31,7 @@ class Major extends BaseController
 	{
 		//FORM Create HANDLER
 		$data = [
-			'title' => 'Form Tambah Data Campus',
+			'title' => 'Form Tambah Data Program Studi',
 			'validation' => \Config\Services::validation()
 		];
 		return view('administrator/data_major/addMajor', $data);
@@ -74,9 +74,9 @@ class Major extends BaseController
 	{
 		$major = $this->dataMajor->find($id);
 		$data = [
-			'title' => 'Form Edit Data Major',
+			'title' => 'Form Edit Data Program Studi',
 			'validation' => \Config\Services::validation(),
-			'major' => $major,
+			'major' => $major
 		];
 		return view('administrator/data_major/updateMajor', $data);
 	}
