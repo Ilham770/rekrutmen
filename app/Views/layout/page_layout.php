@@ -61,7 +61,7 @@ use PhpParser\Node\Stmt\Echo_;
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
                     <a class="btn btn-outline-primary my-2 my-sm-0 mr-2" href="/login">Login</a>
-                    <a class="btn btn-outline-primary my-2 my-sm-0 mr-2" href="/login">Register</a>
+                    <a class="btn btn-outline-primary my-2 my-sm-0 mr-2" href="/register">Register</a>
                 </form>
             </div>
         </nav>
