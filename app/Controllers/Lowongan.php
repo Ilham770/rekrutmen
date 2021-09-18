@@ -14,6 +14,7 @@ class Lowongan extends BaseController
 	{
 		$this->dataLowongan = new LowonganModel();
 	}
+
 	public function index()
 	{
 		$lowongan = $this->dataLowongan->findAll();
