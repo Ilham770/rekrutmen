@@ -3,7 +3,6 @@
 
 <h2 class="mt-2">Data Pelamar</h2>
 <hr>
-<a href="/user/create" class="btn btn-light mb-2"><span data-feather="plus"></span>Tambah Data</a>
 
 <?php if (session()->getFlashdata('pesan')) : ?>
     <div class="alert alert-success" role="alert">
@@ -21,8 +20,9 @@
                 <th>Password</th>
                 <th>Alamat</th>
                 <th>Jenis Kelamin</th>
-                <th>Alamat</th>
+                <th>Tgl/Bln/Thn Lahir</th>
                 <th>No.Telp</th>
+                <th>Gambar</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -35,6 +35,10 @@
                     <td><?= $data['username'] ?></td>
                     <td><?= $data['password'] ?></td>
                     <td><?= $data['address'] ?></td>
+                    <td><?= $data['gender'] ?></td>
+                    <td><?= $data['date_of_birth'] ?></td>
+                    <td><?= $data['phone'] ?></td>
+                    <td><?= $data['gambar'] ?></td>
                     <td>
                         <a href="/user/delete/<?= $data['id'] ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');" class="btn btn-danger">Hapus</a>
                     </td>

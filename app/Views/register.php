@@ -119,7 +119,7 @@
                 </div>
               </div>
 
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <label for="gender" class="form-label">Jenis Kelamin</label>
                 <select class="form-select" id="gender" name="gender" required>
                   <option value="">- Pilih Jenis Kelamin -</option>
@@ -131,9 +131,17 @@
                 </div>
               </div>
 
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <label for="phone" class="form-label">No.Telp</label>
                 <input type="number" class="form-control" id="phone" name="phone" placeholder="Telp." required>
+                <div class="invalid-feedback">
+                  Please enter your shipping address.
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <label for="date_of_birth" class="form-label">Tgl/Bln/Thn Lahir</label>
+                <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" placeholder="Pilih tanggal" required>
                 <div class="invalid-feedback">
                   Please enter your shipping address.
                 </div>
