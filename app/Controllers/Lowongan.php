@@ -17,7 +17,7 @@ class Lowongan extends BaseController
 
 	public function index()
 	{
-		$lowongan = $this->dataLowongan->findAll();
+		$lowongan = $this->dataLowongan->getLowongan();
 
 		$data = [
 			'title' => 'Data Lowongan',

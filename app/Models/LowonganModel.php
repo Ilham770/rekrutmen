@@ -39,4 +39,11 @@ class LowonganModel extends Model
 	protected $afterFind            = [];
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
+
+	public function getLowongan()
+	{
+		return $this->db->table('lowongan')
+			->join('jobdesc', 'jobdesc.id_jobdesc = lowongan.id_jobdesc')
+			->get()->getResultArray();
+	}
 }

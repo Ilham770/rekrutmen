@@ -30,6 +30,7 @@
                     <td><?= $i++ ?></td>
                     <td><?= $data['judul'] ?></td>
                     <td><?= $data['deskripsi'] ?></td>
+                    <td><?= $data['job_name'] ?></td>
                     <td></td>
                     <td><img class="img img-circle" src="/public/images/admin/<?= $data['gambar'] ?>" alt="gambar" width="80px"></td>
                     <td>
