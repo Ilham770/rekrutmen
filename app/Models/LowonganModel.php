@@ -14,7 +14,7 @@ class LowonganModel extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDeletes       = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['judul', 'deskripsi', 'jobdesk', 'gambar', 'tanggal_upload'];
+	protected $allowedFields        = ['judul', 'id_jobdesc', 'deskripsi', 'jobdesk', 'gambar', 'tanggal_upload'];
 
 	// Dates
 	protected $useTimestamps        = true;

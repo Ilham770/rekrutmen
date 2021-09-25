@@ -31,7 +31,7 @@
 
       <select name="jobdesc" id="jobdesc" class="form-control <?= ($validation->hasError('jobdesc')) ? 'is-invalid' : '' ?>">
         <option selected>- Pilih Jenis Pekerjaan -</option>
-        <?php foreach ($addLowongan as $data) : ?>
+        <?php foreach ($lowongan as $data) : ?>
           <option value="<?= $data['id_jobdesc']; ?>"><?= $data['job_name']; ?></option>
         <?php endforeach; ?>
       </select>
