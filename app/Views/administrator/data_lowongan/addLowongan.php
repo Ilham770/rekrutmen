@@ -1,6 +1,7 @@
 <?= $this->extend('administrator/Layout/admin_layout') ?>
 <?= $this->section('content') ?>
 
+
 <form action="/lowongan/save" method="post" class="mt-2 col-md-12">
   <!--form hanya bisa di akses di halaman ini saja-->
   <?= csrf_field(); ?>
@@ -27,9 +28,12 @@
   <div class="row">
     <div class="form-group col-md-3">
       <label for="jobdesc">Jenis Pekerjaan</label>
+
       <select name="jobdesc" id="jobdesc" class="form-control <?= ($validation->hasError('jobdesc')) ? 'is-invalid' : '' ?>">
-        <option selected>Select Jobdesc</option>
-        <option value=""></option>
+        <option selected>- Pilih Jenis Pekerjaan -</option>
+        <?php foreach ($addLowongan as $data) : ?>
+          <option value="<?= $data['id_jobdesc'] ?>"><?= $data['job_name'] ?></option>
+        <?php endforeach; ?>
       </select>
       <div class="invalid-feedback">
         <?= $validation->getError('jobdesc') ?>

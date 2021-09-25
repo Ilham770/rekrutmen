@@ -76,35 +76,35 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/user">
                                 <span data-feather="users"></span>
-                                User
+                                Pelamar
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="/jobdesc">
                                 <span data-feather="clipboard"></span>
-                                Job Description
+                                Jenis Pekerjaan
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="/campus">
                                 <span data-feather="briefcase"></span>
-                                Campus
+                                Kampus
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="/major">
                                 <span data-feather="award"></span>
-                                Major
+                                Lulusan
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="/title">
                                 <span data-feather="edit-2"></span>
-                                Title
+                                Program Studi
                             </a>
                         </li>
                     </ul>

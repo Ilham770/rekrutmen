@@ -30,10 +30,12 @@ class Lowongan extends BaseController
 
 	public function create()
 	{
+		$addLowongan = $this->dataLowongan->getLowongan();
 		//FORM Create HANDLER
 		$data = [
 			'title' => 'Form Tambah Data Lowongan',
-			'validation' => \Config\Services::validation()
+			'validation' => \Config\Services::validation(),
+			'addLowongan' => $addLowongan
 		];
 		return view('administrator/data_lowongan/addLowongan', $data);
 		//end
