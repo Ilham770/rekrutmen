@@ -107,6 +107,13 @@
                                 Program Studi
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cv">
+                                <span data-feather="edit-2"></span>
+                                List Cv
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
