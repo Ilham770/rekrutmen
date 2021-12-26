@@ -7,11 +7,11 @@ use App\Models\UserModel;
 
 class Register extends BaseController
 {
-	protected $dataRegister;
+	protected $dataUser;
 
 	function __construct()
 	{
-		$this->dataRegister = new UserModel();
+		$this->dataUser = new UserModel();
 	}
 
 	public function index()
@@ -29,32 +29,36 @@ class Register extends BaseController
 		if (!$this->validate([
 			'fullname' => 'required',
 			'username' => 'required|alpha_numeric',
-			'password' => 'required|alpha_numeric|max_length[10]',
+			'password' => 'required|max_length[10]',
 			'gender' => 'required',
 			'date_of_birth' => 'required',
 			'phone' => 'required|alpha_numeric|max_length[15]',
+			'gambar' => 'required',
 			'address' => 'required',
 
 		])) {
-			$validation = \Config\Services::validation();
-			return redirect()->to('admin/create')->withInput()->with('validation', $validation);
+			// $validation = \Config\Services::validation();
+			return redirect()->to('/register')->withInput();
 		}
-		//end
 
+		$fileGambar = $this->request->getFile('gambar');
+		$fileGambar->move(WRITEPATH. 'img/user');
+		//end
 		//FUNGSI SAVE DATA
-		$this->dataAdmin->save([
-			'nama' => $this->request->getVar('nama'),
+		$this->dataUser->save([	
+			'fullname' => $this->request->getVar('fullname'),
 			'username' => $this->request->getVar('username'),
-			'Password' => $this->request->getVar('password'),
-			'jabatan' => $this->request->getVar('jabatan'),
-			'kelamin' => $this->request->getVar('kelamin'),
-			'alamat' => $this->request->getVar('alamat'),
-			'telepon' => $this->request->getVar('telepon'),
+			'password' => $this->request->getvar('password'),
+			'gender' => $this->request->getVar('gender'),
+			'date_of_birth' => $this->request->getVar('date_of_birth'),
+			'phone' => $this->request->getVar('phone'),
+			'gambar' => $fileGambar,
+			'address' => $this->request->getVar('address'),
 		]);
 
 		session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
 
-		return redirect()->to('/admin/view');
+		return redirect()->to('/register');
 	}
 	//end
 }

@@ -32,7 +32,7 @@
                     <td><?= $data['deskripsi'] ?></td>
                     <td><?= $data['job_name'] ?></td>
                     <td></td>
-                    <td><img class="img img-circle" src="/public/images/admin/<?= $data['gambar'] ?>" alt="gambar" width="80px"></td>
+                    <td><img class="img img-circle" src="/public/images/lowongan/<?= $data['gambar'] ?>" alt="gambar" width="80px"></td>
                     <td>
                         <a href="/lowongan/edit/<?= $data['id'] ?>" class="btn btn-warning mb-2">Ubah</a> ||
                         <a href="/lowongan/delete/<?= $data['id'] ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');" class="btn btn-danger">Hapus</a>

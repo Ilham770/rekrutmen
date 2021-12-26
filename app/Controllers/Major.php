@@ -45,7 +45,7 @@ class Major extends BaseController
 			'major_title' => 'required',
 		])) {
 			$validation = \Config\Services::validation();
-			return redirect()->to('major/create')->withInput()->with('validation', $validation);
+			return redirect()->to('major/create')->withInput();
 		}
 		//end
 

@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\LowonganModel;
-use CodeIgniter\HTTP\Request;
 
 class Lowongan extends BaseController
 {
@@ -48,19 +47,22 @@ class Lowongan extends BaseController
 			'judul' => 'required',
 			'deskripsi' => 'required',
 			'id_jobdesc' => 'required',
-			'gambar' => 'required',
+			'gambar' => 'uploaded[gambar]',
 		])) {
-			$validation = \Config\Services::validation();
-			return redirect()->to('lowongan/create')->withInput()->with('validation', $validation);
-		}
-		//end
+			
+			// $validation = \Config\Services::validation();
 
+			return redirect()->to('lowongan/create')->withInput();
+		}
+		
+		$path = $this->request->getFile('gambar');
+		$path->move('public/images/lowongan');
 		//FUNGSI SAVE DATA
 		$this->dataLowongan->save([
 			'judul' => $this->request->getVar('judul'),
 			'deskripsi' => $this->request->getVar('deskripsi'),
 			'id_jobdesc' => $this->request->getVar('jobdesc'),
-
+			'gambar' => $path
 		]);
 
 		session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');

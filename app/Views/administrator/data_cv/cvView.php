@@ -1,7 +1,7 @@
 <?= $this->extend('administrator/Layout/admin_layout') ?>
 <?= $this->section('content') ?>
 
-<h2 class="mt-2">Data Jurusan</h2>
+<h2 class="mt-2">Data CV</h2>
 <hr>
 <a href="/cv/create" class="btn btn-light mb-2"><span data-feather="plus"></span>Tambah Data</a>
 

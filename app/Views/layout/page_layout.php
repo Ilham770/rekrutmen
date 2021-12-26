@@ -35,33 +35,33 @@ use PhpParser\Node\Stmt\Echo_;
 
     <header>
         <!--NAVBAR-->
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="/">e-Rekrutmen</a>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: white; border-bottom: 2px solid red;">
+            <a class="navbar-brand" href="/"><img class="img-responsive" src="/images/icon.png" width="200px"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        <a style="color: red;" class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/page/about">About</a>
+                        <a style="color: red;" class="nav-link" href="/page/about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/page/job_vacancies">Job Vacancie</a>
+                        <a style="color: red;" class="nav-link" href="/page/job_vacancies">Job Vacancie</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/page/contact">Contact Us</a>
+                        <a style="color: red;" class="nav-link" href="/page/contact">Contact Us</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/page/faq">FAQ</a>
+                        <a style="color: red;" class="nav-link" href="/page/faq">FAQ</a>
                     </li>
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
-                    <a class="btn btn-outline-primary my-2 my-sm-0 mr-2" href="/login">Login</a>
-                    <a class="btn btn-outline-primary my-2 my-sm-0 mr-2" href="/register">Register</a>
+                    <a class="btn btn-outline-danger my-2 my-sm-0 mr-2" href="/login">Login</a>
+                    <a class="btn btn-outline-danger my-2 my-sm-0 mr-2" href="/register">Register</a>
                 </form>
             </div>
         </nav>
@@ -75,9 +75,9 @@ use PhpParser\Node\Stmt\Echo_;
 
 
         <!-- FOOTER -->
-        <footer class="container">
+        <footer class="container" style="color: red;">
             <p class="float-right"><a href="#">Back to top</a></p>
-            <p>&copy; 2021 e-Rekrutmen Codeigniter 4 by Ilham Tanjung Kurniawan || ITB Stikom Bali &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+            <p>&copy; 2021 e-Rekrutmen Codeigniter 4 by Ilham Tanjung Kurniawan || ITB Stikom Bali &middot;</p>
         </footer>
     </main>
 

@@ -46,7 +46,7 @@
   <div class="container">
     <main>
       <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+        <img class="d-block mx-auto mb-4 img-responsive" src="/images/icon.png" alt="" width="200px">
         <h2>Daftarkan Akun anda disini</h2>
         <p class="lead">Silahkan daftarkan diri anda agar dapat melihat lowongan kerja praktek dan melamar pekerjaan</p>
       </div>
@@ -84,68 +84,82 @@
           </ul>
         </div>
         <div class="col-md-7 col-lg-8">
-          <form class="needs-validation" action="">
+        <?php if (session()->getFlashdata('pesan')) : ?>
+          <div class="alert alert-success" role="alert">
+        <?= session()->getFlashdata('pesan'); ?>
+           </div>
+      <?php endif; ?>
+          <form class="needs-validation" action="/register/save" method="post" enctype="multipart/form-data">
+          <?= csrf_field(); ?>
             <div class="row g-3">
-
               <div class="col-12">
                 <label for="fullname" class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Nama Lengkap" required>
+                <input type="text" class="form-control <?= ($validation->hasError('fullname')) ? 'is-invalid' : '' ?>" id="fullname" name="fullname" placeholder="Nama Lengkap">
                 <div class="invalid-feedback">
-                  Valid first name is required.
+                <?= $validation->getError('fullname') ?>
                 </div>
               </div>
 
               <div class="col-12">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Username" required>
+                <input type="text" class="form-control <?= ($validation->hasError('username')) ? 'is-invalid' : '' ?>" name="username" id="username" placeholder="Username">
                 <div class="invalid-feedback">
-                  Your username is required.
+                <?= $validation->getError('username') ?>
                 </div>
               </div>
 
               <div class="col-12">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                <input type="password" class="form-control <?= ($validation->hasError('password')) ? 'is-invalid' : ''?>" id="password" name="password" placeholder="Password">
                 <div class="invalid-feedback">
-                  Please enter your shipping address.
+                <?= $validation->getError('password') ?>
                 </div>
               </div>
 
               <div class="col-12">
                 <label for="address" class="form-label">Alamat</label>
-                <input type="text" name="address" class="form-control" id="address" placeholder="Alamat">
+                <input type="text" name="address" class="form-control <?= ($validation->hasError('address')) ? 'is-invalid' : ''?>" id="address" placeholder="Alamat">
                 <div class="invalid-feedback">
-                  Please enter your shipping address.
+                <?= $validation->getError('address')?>
                 </div>
               </div>
 
               <div class="col-md-4">
                 <label for="gender" class="form-label">Jenis Kelamin</label>
-                <select class="form-select" id="gender" name="gender" required>
+                <select class="form-select <?= ($validation->hasError('gender')) ? 'is-invalid' : ''?>" id="gender" name="gender">
                   <option value="">- Pilih Jenis Kelamin -</option>
                   <option value="Laki - Laki">Laki - Laki</option>
                   <option value="Perempuan">Perempuan</option>
                 </select>
                 <div class="invalid-feedback">
-                  Please select a valid country.
+                <?= $validation->getError('gender')?>
                 </div>
               </div>
 
               <div class="col-md-4">
                 <label for="phone" class="form-label">No.Telp</label>
-                <input type="number" class="form-control" id="phone" name="phone" placeholder="Telp." required>
+                <input type="number" class="form-control <?= ($validation->hasError('phone')) ? 'is-invalid' : ''?>" id="phone" name="phone" placeholder="Telp.">
                 <div class="invalid-feedback">
-                  Please enter your shipping address.
+                  <?= $validation->getError('phone')?>
                 </div>
               </div>
 
               <div class="col-md-4">
                 <label for="date_of_birth" class="form-label">Tgl/Bln/Thn Lahir</label>
-                <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" placeholder="Pilih tanggal" required>
+                <input type="date" class="form-control <?= ($validation->hasError('date_of_birth')) ? 'is-invalid' : ''?>" id="date_of_birth" name="date_of_birth" placeholder="Pilih tanggal">
                 <div class="invalid-feedback">
-                  Please enter your shipping address.
+                <?= $validation->getError('date_of_birth')?>
                 </div>
               </div>
+
+              <div class="col-12">
+                <label for="gambar" class="form-label">Photo</label>
+                <input type="file" class="form-control <?= ($validation->hasError('gambar')) ? 'is-invalid' : ''?>" name="gambar" id="gambar" placeholder="Pilih Gambar">
+                <div class="invalid-feedback">
+                <?= $validation->getError('gambar')?>
+                </div>
+              </div>
+
             </div>
 
 

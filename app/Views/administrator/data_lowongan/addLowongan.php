@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
 
 
-<form action="/lowongan/save" method="post" class="mt-2 col-md-12">
+<form action="/lowongan/save" method="post" class="mt-2 col-md-12" enctype="multipart/form-data">
   <!--form hanya bisa di akses di halaman ini saja-->
   <?= csrf_field(); ?>
   <div class="row">
