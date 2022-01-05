@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\LowonganModel;
+use CodeIgniter\HTTP\Files\UploadedFile;
 
 class Lowongan extends BaseController
 {
@@ -29,12 +30,12 @@ class Lowongan extends BaseController
 
 	public function create()
 	{
-		$lowongan = $this->dataLowongan->getLowongan();
+		$jobdesc = $this->dataLowongan->getLowongan();
 		//FORM Create HANDLER
 		$data = [
 			'title' => 'Form Tambah Data Lowongan',
 			'validation' => \Config\Services::validation(),
-			'lowongan' => $lowongan
+			'jobdesc' => $jobdesc
 		];
 		return view('administrator/data_lowongan/addLowongan', $data);
 		//end
@@ -46,28 +47,32 @@ class Lowongan extends BaseController
 		if (!$this->validate([
 			'judul' => 'required',
 			'deskripsi' => 'required',
-			'id_jobdesc' => 'required',
-			'gambar' => 'uploaded[gambar]',
+			// 'id_jobdesc' => 'required',
+			'gambar' => 'uploaded[gambar]','mime_in[gambar,image/jpg,image/jpeg,image/png]','max_size[gambar,1024]',
 		])) {
-			
 			// $validation = \Config\Services::validation();
-
 			return redirect()->to('lowongan/create')->withInput();
 		}
 		
-		$path = $this->request->getFile('gambar');
-		$path->move('public/images/lowongan');
-		//FUNGSI SAVE DATA
-		$this->dataLowongan->save([
+		$gambar = $this->request->getFile('gambar');
+		if($gambar)
+		{
+			$gambar->move(ROOTPATH.'public/uploads');
+
+			//FUNGSI SAVE DATA
+			$this->dataLowongan->save([
 			'judul' => $this->request->getVar('judul'),
 			'deskripsi' => $this->request->getVar('deskripsi'),
 			'id_jobdesc' => $this->request->getVar('jobdesc'),
-			'gambar' => $path
-		]);
-
+			'gambar' => $gambar->getName()
+			]);
+		}
+		
+		
+		
+		
 		session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
-
-		return redirect()->to('/lowongan/view');
+		return redirect()->to('/lowongan');
 	}
 	//end
 

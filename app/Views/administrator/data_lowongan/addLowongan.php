@@ -31,7 +31,7 @@
 
       <select name="jobdesc" id="jobdesc" class="form-control <?= ($validation->hasError('jobdesc')) ? 'is-invalid' : '' ?>">
         <option selected>- Pilih Jenis Pekerjaan -</option>
-        <?php foreach ($lowongan as $data) : ?>
+        <?php foreach ($jobdesc as $data) : ?>
           <option value="<?= $data['id_jobdesc']; ?>"><?= $data['job_name']; ?></option>
         <?php endforeach; ?>
       </select>
@@ -49,8 +49,6 @@
         <?= $validation->getError('gambar') ?>
       </div>
       <br><br>
-      <p style="color: red;">* Ukuran file Gambar / File max 4MB</p>
-      <p style="color: red;">* Ekstensi file wajib : PNG & JPG/JPEG</p>
     </div>
   </div>
 

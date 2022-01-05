@@ -33,7 +33,7 @@ class Register extends BaseController
 			'gender' => 'required',
 			'date_of_birth' => 'required',
 			'phone' => 'required|alpha_numeric|max_length[15]',
-			'gambar' => 'required',
+			'gambar' => 'uploaded[gambar]',
 			'address' => 'required',
 
 		])) {
@@ -42,7 +42,7 @@ class Register extends BaseController
 		}
 
 		$fileGambar = $this->request->getFile('gambar');
-		$fileGambar->move(WRITEPATH. 'img/user');
+		$fileGambar->move(WRITEPATH. 'images/user');
 		//end
 		//FUNGSI SAVE DATA
 		$this->dataUser->save([	
@@ -57,7 +57,6 @@ class Register extends BaseController
 		]);
 
 		session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
-
 		return redirect()->to('/register');
 	}
 	//end

@@ -64,7 +64,7 @@ class Major extends BaseController
 	{
 		$this->dataMajor->delete($id);
 		session()->setFlashdata('pesan', 'Data berhasil dihapus.');
-
+		
 		return redirect()->to('/major');
 	}
 	//end
