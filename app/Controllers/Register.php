@@ -42,7 +42,7 @@ class Register extends BaseController
 		}
 
 		$fileGambar = $this->request->getFile('gambar');
-		$fileGambar->move(WRITEPATH. 'images/user');
+		$fileGambar->move(ROOTPATH. 'public/images/user');
 		//end
 		//FUNGSI SAVE DATA
 		$this->dataUser->save([	

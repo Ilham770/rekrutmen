@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\LowonganModel;
+use App\Models\JobdescModel;
 use CodeIgniter\HTTP\Files\UploadedFile;
 
 class Lowongan extends BaseController
@@ -17,7 +18,7 @@ class Lowongan extends BaseController
 
 	public function index()
 	{
-		$lowongan = $this->dataLowongan->getLowongan();
+		$lowongan = $this->dataJobdesc->getLowongan();
 
 		$data = [
 			'title' => 'Data Lowongan',
@@ -67,10 +68,7 @@ class Lowongan extends BaseController
 			'gambar' => $gambar->getName()
 			]);
 		}
-		
-		
-		
-		
+				
 		session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
 		return redirect()->to('/lowongan');
 	}
