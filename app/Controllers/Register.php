@@ -33,31 +33,36 @@ class Register extends BaseController
 			'gender' => 'required',
 			'date_of_birth' => 'required',
 			'phone' => 'required|alpha_numeric|max_length[15]',
-			'gambar' => 'uploaded[gambar]',
-			'address' => 'required',
+			'address' => 'required|max_length[200]',
+			'gambar' => 'uploaded[gambar]','mime_in[gambar,image/jpg,image/jpeg,image/png]','max_size[gambar,1024]',
+			
 
 		])) {
+			
 			// $validation = \Config\Services::validation();
 			return redirect()->to('/register')->withInput();
 		}
 
 		$fileGambar = $this->request->getFile('gambar');
-		$fileGambar->move(ROOTPATH. 'public/images/user');
-		//end
-		//FUNGSI SAVE DATA
-		$this->dataUser->save([	
-			'fullname' => $this->request->getVar('fullname'),
-			'username' => $this->request->getVar('username'),
-			'password' => $this->request->getvar('password'),
-			'gender' => $this->request->getVar('gender'),
-			'date_of_birth' => $this->request->getVar('date_of_birth'),
-			'phone' => $this->request->getVar('phone'),
-			'gambar' => $fileGambar,
-			'address' => $this->request->getVar('address'),
-		]);
 
-		session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
-		return redirect()->to('/register');
+		if($fileGambar){
+			$fileGambar->move(ROOTPATH.'public/images/user');
+		
+			$this->dataUser->save([	
+				'fullname' => $this->request->getVar('fullname'),
+				'username' => $this->request->getVar('username'),
+				'password' => $this->request->getvar('password'),
+				'gender' => $this->request->getVar('gender'),
+				'date_of_birth' => $this->request->getVar('date_of_birth'),
+				'phone' => $this->request->getVar('phone'),
+				'address' => $this->request->getVar('address'),
+				'gambar' => $fileGambar->getName(),
+				
+			]);
+	
+			session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
+			return redirect()->to('/register');
+		}
 	}
 	//end
 }

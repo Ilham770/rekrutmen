@@ -38,7 +38,9 @@
                     <td><?= $data['gender'] ?></td>
                     <td><?= $data['date_of_birth'] ?></td>
                     <td><?= $data['phone'] ?></td>
-                    <td><?= $data['gambar'] ?></td>
+                    <td>
+                    <img src="images/user/<?= $data['gambar'] ?>" alt="" width="50px" height="50px" class="img-responsive rounded-circle">    
+                    </td>
                     <td>
                         <a href="/user/delete/<?= $data['id'] ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');" class="btn btn-danger">Hapus</a>
                     </td>

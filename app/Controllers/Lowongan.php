@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\LowonganModel;
 use App\Models\JobdescModel;
 use CodeIgniter\HTTP\Files\UploadedFile;
+use Config\App;
 
 class Lowongan extends BaseController
 {
@@ -18,8 +19,7 @@ class Lowongan extends BaseController
 
 	public function index()
 	{
-		$lowongan = $this->dataJobdesc->getLowongan();
-
+		$lowongan = $this->dataLowongan->getLowongan();
 		$data = [
 			'title' => 'Data Lowongan',
 			'lowongan' => $lowongan
@@ -31,12 +31,12 @@ class Lowongan extends BaseController
 
 	public function create()
 	{
-		$jobdesc = $this->dataLowongan->getLowongan();
+		$jobdesc = model('App\Models\JobdescModel')->findAll();
 		//FORM Create HANDLER
 		$data = [
 			'title' => 'Form Tambah Data Lowongan',
 			'validation' => \Config\Services::validation(),
-			'jobdesc' => $jobdesc
+			'jobdesc' => $jobdesc,
 		];
 		return view('administrator/data_lowongan/addLowongan', $data);
 		//end
@@ -73,5 +73,11 @@ class Lowongan extends BaseController
 		return redirect()->to('/lowongan');
 	}
 	//end
+	public function delete($id)
+	{
+		$this->dataLowongan->delete($id);
+		session()->setFlashdata('pesan', 'Data berhasil dihapus.');
 
+		return redirect()->to('/lowongan');
+	}
 }
